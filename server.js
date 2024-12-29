@@ -12,6 +12,7 @@ dotenv.config();
 // App setup
 const app = express();
 app.use(cors());
+
 app.use(express.json());
 app.use(router);
 
@@ -23,7 +24,7 @@ app.get("/", (req, res) => {
   return res.status(200).json({ success: "response from get api" });
 });
 
-// Server setup
+// Server setup //
 const server = http.createServer(app);
 const port = process.env.PORT || 5000;
 server.listen(port, () => {
